@@ -1,0 +1,11 @@
+Development Journal:
+
+6 February 2015
+	This the git hub repository was created. Development of questions is continuing, and I am conducting research on
+how to create a GUI for the program. Additionally, I am creating the format to export it to an HTML based website. I have
+also discussed the testing of this program with the Human Geography teacher at Capital, Mr. Faulkner. I am creating the
+basic API or structure I have planned for the code. I plan on having the questions and basic terminal working by next week
+and the form for entering questions and embedding links as a resource for information. I am compliling these links and the 
+correct answers to the questions.I am also trying to figure out how to work with GitHub and looking into making this into a 
+Windows applet thing. My goals for next week are: Start BlueJ program, create some questions, collect information, and 
+figure out how to test.
