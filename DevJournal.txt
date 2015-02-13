@@ -11,3 +11,11 @@ Windows applet thing. My goals for next week are: Start BlueJ program, create so
 figure out how to test.
 
 13 February 2015
+	This week, I became more familiar with the workings of git hub and how to efficiently add, commit, and push code to 
+the git hub repository. I also created a point system, and worked on creating the main class.  With the experience gained 
+from the Grocery List program that we recently completed in class, I will start structuring the export to HTML feature to 
+display the user's results. Additionally, this week, I will conduct research online and ask Mr. Schreiber about creating a 
+GUI for the quiz system. Not connected with the specific code itself, I will talk to my teachers about what functionalities 
+would specifically benefit an instructor using this program. I will also start on the PowerPoint for the final presentation,
+specifically focusing on the Development and initial idea behind the program. My goals for next week are: Create a third of 
+the questions list, acquire  a list of potential functionalities, and test out the current main class that I have.
