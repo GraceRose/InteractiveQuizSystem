@@ -9,3 +9,5 @@ and the form for entering questions and embedding links as a resource for inform
 correct answers to the questions.I am also trying to figure out how to work with GitHub and looking into making this into a 
 Windows applet thing. My goals for next week are: Start BlueJ program, create some questions, collect information, and 
 figure out how to test.
+
+13 February 2015

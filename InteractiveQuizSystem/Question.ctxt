@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=q\ a
+comment0.target=Question(java.lang.String,\ java.lang.String)
+comment1.params=
+comment1.target=java.lang.String\ getQuestion()
+comment2.params=
+comment2.target=java.lang.String\ getAnswer()
+comment3.params=c
+comment3.target=void\ setCorrect(boolean)
+numComments=4
