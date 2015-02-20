@@ -16,6 +16,8 @@ the git hub repository. I also created a point system, and worked on creating th
 from the Grocery List program that we recently completed in class, I will start structuring the export to HTML feature to 
 display the user's results. Additionally, this week, I will conduct research online and ask Mr. Schreiber about creating a 
 GUI for the quiz system. Not connected with the specific code itself, I will talk to my teachers about what functionalities 
-would specifically benefit an instructor using this program. I will also start on the PowerPoint for the final presentation,
-specifically focusing on the Development and initial idea behind the program. My goals for next week are: Create a third of 
-the questions list, acquire  a list of potential functionalities, and test out the current main class that I have.
+would specifically benefit an instructor using this program. I will also start on the PowerPoint for the final presentation, specifically focusing on the Development and initial idea behind the program. My goals for next week are: Create a third of the questions list, acquire  a list of potential functionalities, and test out the current main class that I have.
+
+20 February 2015
+	This week I created a way for a user to create and enter their own questions into the system. I also futher tested
+the interactive element of the program. I made functions that allow the user to pass the commands of test, fact, create, and exit. I still need to fix what is said when the user exits the program. The main class currently functions well in the test mode. This mode will then be carried over to the actual program once debugged to be the walkthrough system. Of my goals from last week, I have started a list of potential functionalities and I have tested the main class and made some, but not all, improvements. The most importnat things yet to accomplish are to create a questions list and to discuss the program with those teachers of mine who would benefit most from the functions of this specific program. My goals for the next week are to fully develop twenty questions for testing purposes and to have the class that creates the questions finished. 

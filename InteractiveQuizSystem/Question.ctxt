@@ -1,12 +1,14 @@
 #BlueJ class context
-comment0.params=q\ a\ s
-comment0.target=Question(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.params=q\ a\ s\ p
+comment0.target=Question(java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
 comment1.params=
 comment1.target=java.lang.String\ getQuestion()
 comment2.params=
 comment2.target=java.lang.String\ getAnswer()
 comment3.params=
 comment3.target=java.lang.String\ getSource()
-comment4.params=c
-comment4.target=void\ setCorrect(boolean)
-numComments=5
+comment4.params=
+comment4.target=int\ getPointVal()
+comment5.params=c
+comment5.target=void\ setCorrect(boolean)
+numComments=6
