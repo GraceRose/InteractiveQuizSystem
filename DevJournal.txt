@@ -34,3 +34,15 @@ finished.
 27 February 2015
 	This week I discussed the procedure for testing with my Human Geography teacher Mr. Faulkner. As a part of class in
 a few months I will test the program and hopefully receive feedback on how it works. I have also completed a set of five tester questions in order to allow for easy debugging of the code. I aditionally added to a method that allows users to submit their own questions. I modified the checkAnswer() method and am pretty happy with it as a final product. I plan on showing my tester code to Mr. Schreiber next week after I fix the bug that makes the user exit out of the tester mode when the user requests additional information. I also will expand on the questions list with actual questions for showing to Mr. Schreiber. Next week these questions along with the basic code functioning are due. My goals this week are to finish testing and to develop the method with which I will allow this program to be used by others, including finishing the README with instructions.
+
+6 March 2015
+	This week the first deliverables were due. I changed my plan so that I would not be creating a GUI for the project,
+ but instead have it run through the terminal. Instead of having a GUI, I decided to submit my base HTML code. THis is the 
+code that writes the results to a webpage. I do not know if I plan on having this code accessible through a URL or if I would 
+like to keep it local. The other deliverable I finished is the basic five question list for testing purposes. This is used so
+I can get an adequate sample with minimal time taken and a rather diverse set of questions. This week I worked more on
+implementing a way for a user to create his or her own questions. Because I will be gone two days of this upcoming week, I 
+plan on fleshing out the HTML method and pushing to finish writing the code in preparation of the next deliverable in April,
+ when the code is due. 
+
+13 March 2015
