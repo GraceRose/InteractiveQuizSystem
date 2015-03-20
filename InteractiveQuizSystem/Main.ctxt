@@ -1,14 +1,19 @@
 #BlueJ class context
 comment0.params=args
 comment0.target=void\ main(java.lang.String[])
+comment0.text=\r\n\ This\ method\ runs\ the\ Interactive\ Quiz\ System\r\n\ @param\ args\ not\ used\r\n
 comment1.params=
 comment1.target=void\ test()
+comment1.text=\r\n\ This\ runs\ the\ testing\ portion\ of\ the\ program\r\n
 comment2.params=p
 comment2.target=void\ addScore(int)
+comment2.text=\r\n\ This\ adds\ to\ the\ score\r\n\ @param\ p\ the\ score\ to\ add\ to\ the\ score\r\n
 comment3.params=quest
 comment3.target=void\ askQuestion(Question)
+comment3.text=\r\n\ This\ asks\ the\ question\r\n\ @param\ quest\ the\ question\ to\ be\ asked\r\n
 comment4.params=i\ quest
 comment4.target=void\ checkAnswer(java.lang.String,\ Question)
+comment4.text=\r\n\ This\ checks\ the\ question's\ answer\r\n\ @param\ i\ the\ input\ String\r\n\ @param\ quest\ the\ quetion\ with\ the\ answer\r\n
 comment5.params=
 comment5.target=void\ exportAsHTML()
 comment5.text=\r\n\ This\ exports\ the\ file\ to\ an\ HTML\ file\r\n

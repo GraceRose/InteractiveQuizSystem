@@ -1,14 +1,20 @@
 #BlueJ class context
 comment0.params=q\ a\ s\ p
 comment0.target=Question(java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
+comment0.text=\r\n\ This\ creates\ a\ question\r\n\ @param\ q\ the\ question\r\n\ @param\ a\ the\ answer\ to\ said\ question\r\n\ @param\ s\ the\ source\ to\ said\ question\r\n\ @param\ p\ the\ point\ value\ of\ said\ question\r\n
 comment1.params=
 comment1.target=java.lang.String\ getQuestion()
+comment1.text=\r\n\ This\ returns\ the\ question\r\n\ @return\ the\ question\r\n
 comment2.params=
 comment2.target=java.lang.String\ getAnswer()
+comment2.text=\r\n\ This\ returns\ the\ answer\r\n\ @return\ the\ answer\r\n
 comment3.params=
 comment3.target=java.lang.String\ getSource()
+comment3.text=\r\n\ This\ returns\ the\ source\r\n\ @return\ the\ source\r\n
 comment4.params=
 comment4.target=int\ getPointVal()
+comment4.text=\r\n\ This\ returns\ the\ point\ value\r\n\ @return\ the\ point\ value\r\n
 comment5.params=c
 comment5.target=void\ setCorrect(boolean)
+comment5.text=\r\n\ This\ says\ if\ the\ question\ is\ correct\r\n\ @param\ c\ if\ the\ question\ is\ correct\r\n
 numComments=6

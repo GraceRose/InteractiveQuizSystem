@@ -14,6 +14,10 @@ public class Main{
     protected static Question test4 = new Question("The only non-rectangular shaped flag belongs to what country?","Nepal","http://en.wikipedia.org/wiki/Nepal",2);
     protected static Question test5 = new Question("What state is the FRC team 254 from?","California","team254.com/",2);
     public static ArrayList<String> storedAnswer = new ArrayList<String>();
+    /**
+     * This method runs the Interactive Quiz System
+     * @param args not used
+     */
     public static void main(String[] args){
         Main main = new Main();
         Scanner kbReader = new Scanner(System.in);
@@ -85,6 +89,9 @@ public class Main{
         }
     }
 
+    /**
+     * This runs the testing portion of the program
+     */
     public static void test(){
         Scanner kbReader = new Scanner(System.in);
         //    for(int i = 0; i< 5;i++){
@@ -107,14 +114,27 @@ public class Main{
 
     }
 
+    /**
+     * This adds to the score
+     * @param p the score to add to the score
+     */
     public static void addScore(int p){
         score += p;
     }
 
+    /**
+     * This asks the question
+     * @param quest the question to be asked
+     */
     public static void askQuestion(Question quest){
         System.out.println(quest.getQuestion());
     }
 
+    /**
+     * This checks the question's answer
+     * @param i the input String
+     * @param quest the quetion with the answer
+     */
     public static void checkAnswer(String i, Question quest){
         Scanner kbReader = new Scanner(System.in);
         if(i.equalsIgnoreCase(quest.getAnswer())){
