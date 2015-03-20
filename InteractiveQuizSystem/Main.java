@@ -3,16 +3,16 @@ import java.io.*;
 /**
  * This class runs the IQS
  * @author Grace Rosenvall
- * last modded 12 Feb 2015
+ * last modded 20 Mar 2015
  */
 public class Main{
     protected static int score;
     protected static String name;
-    protected static Question test1 = new Question("What is the capital of Idaho?","Boise", "wikipedia.org", 2);
-    protected static Question test2 = new Question("In which state is the highest point in the United States?","Alaska","wikipedia.org",2);
-    protected static Question test3 = new Question("Which state contains the Great Salt Lake?","Utah","wikipedia.org",2);
-    protected static Question test4 = new Question("The only non-rectangular shaped flag belongs to what country?","Nepal","wikipedia.org",2);
-    protected static Question test5 = new Question("What state is the FRC team 254 from?","California","wikipedia.org",2);
+    protected static Question test1 = new Question("What is the capital of Idaho?","Boise", "http://en.wikipedia.org/wiki/Boise,_Idaho", 2);
+    protected static Question test2 = new Question("In which state is the highest point in the United States?","Alaska","http://en.wikipedia.org/wiki/Mount_McKinley",2);
+    protected static Question test3 = new Question("Which state contains the Great Salt Lake?","Utah","http://en.wikipedia.org/wiki/Utah",2);
+    protected static Question test4 = new Question("The only non-rectangular shaped flag belongs to what country?","Nepal","http://en.wikipedia.org/wiki/Nepal",2);
+    protected static Question test5 = new Question("What state is the FRC team 254 from?","California","team254.com/",2);
     public static ArrayList<String> storedAnswer = new ArrayList<String>();
     public static void main(String[] args){
         Main main = new Main();
@@ -23,18 +23,20 @@ public class Main{
         System.out.println("Hello and welcome to the Interactive Quiz System. I am Cora, your guide through this process. Please type your name.");
         input = kbReader.nextLine();
         name = input;
-        System.out.println("Welcome to the IQS, " + name + "! Press enter to start.");
+        System.out.println("Welcome to the IQS, " + name + "!");
         while(x){
-            input = kbReader.nextLine();
+            
             System.out.println("Your score is " + score);
             System.out.println("What would you like to do?");
+            input = kbReader.nextLine();
             if(input.equalsIgnoreCase("exit")){
-                System.out.println("Oh right you want to leave. Fine.");
+                System.out.println("You want to leave....WHY???????...Fine.");
                 x = false;
             }
 
             if(input.equalsIgnoreCase("fact")){
                 System.out.println("This statement is false");
+                addScore(5);
             }
             if(input.equalsIgnoreCase("export")){
                 try{                
@@ -48,12 +50,36 @@ public class Main{
             }
 
             if(input.equalsIgnoreCase("test")){
-                /*
-                askQuestion(test);
-                input = kbReader.nextLine();
-                checkAnswer(input, test);
-                 */
                 test();
+            }
+            if(input.equalsIgnoreCase("create")){
+                int p;
+                System.out.println("What is the question?");
+                input = kbReader.nextLine();
+                String q = input;
+                System.out.println("What is the answer?");
+                input = kbReader.nextLine();
+                String a = input;
+                System.out.println("Source?");
+                input = kbReader.nextLine();
+                String s = input;
+                System.out.println("Point value?");
+                input = kbReader.nextLine();
+                if(input.equalsIgnoreCase("default")){
+                    p = 2;
+                }
+                else{
+                    p = 1;
+                }
+                Question create = new Question(q,a,s,p);
+                System.out.println("Would you like to hear your question?");
+                input = kbReader.nextLine();
+                if(input.equalsIgnoreCase("yes")){
+                    askQuestion(create);
+                    input = kbReader.nextLine();
+                    checkAnswer(input, create);
+                }
+                
             }
 
         }
