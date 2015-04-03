@@ -4,7 +4,7 @@ import java.util.*;
  * @author Grace Rosenvall
  */
 public class EnteredQuestions{
-    ArrayList<Question> eQ = new ArrayList<Question>();
+    public static ArrayList<Question> eQ = new ArrayList<Question>();
     /**
      * This creates new entered questions
      * @param q the question
@@ -15,5 +15,14 @@ public class EnteredQuestions{
     public void add(String q, String a, String s, int p){
         Question k = new Question(q,a,s,p);
         eQ.add(k);
+    }
+    public static ArrayList<Question> getArray(){
+        return eQ;
+    }
+    public static int size(){
+        return eQ.size();
+    }
+    public static Question getInd(int i){
+        return eQ.get(i);
     }
 }

@@ -17,4 +17,6 @@ comment4.text=\r\n\ This\ checks\ the\ question's\ answer\r\n\ @param\ i\ the\ i
 comment5.params=
 comment5.target=void\ exportAsHTML()
 comment5.text=\r\n\ This\ exports\ the\ file\ to\ an\ HTML\ file\r\n
-numComments=6
+comment6.params=
+comment6.target=void\ exportQuestionsAsHTML()
+numComments=7

@@ -2,4 +2,10 @@
 comment0.params=q\ a\ s\ p
 comment0.target=void\ add(java.lang.String,\ java.lang.String,\ java.lang.String,\ int)
 comment0.text=\r\n\ This\ creates\ new\ entered\ questions\r\n\ @param\ q\ the\ question\r\n\ @param\ a\ the\ answer\r\n\ @param\ s\ the\ source\r\n\ @param\ p\ the\ point\ value\r\n
-numComments=1
+comment1.params=
+comment1.target=java.util.ArrayList\ getArray()
+comment2.params=
+comment2.target=int\ size()
+comment3.params=i
+comment3.target=Question\ getInd(int)
+numComments=4

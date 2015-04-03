@@ -13,6 +13,8 @@ public class Main{
     protected static Question test3 = new Question("Which state contains the Great Salt Lake?","Utah","http://en.wikipedia.org/wiki/Utah",2);
     protected static Question test4 = new Question("The only non-rectangular shaped flag belongs to what country?","Nepal","http://en.wikipedia.org/wiki/Nepal",2);
     protected static Question test5 = new Question("What state is the FRC team 254 from?","California","team254.com/",2);
+    protected static String FileName = "";
+    protected static String FileNameR = "";
     public static ArrayList<String> storedAnswer = new ArrayList<String>();
     /**
      * This method runs the Interactive Quiz System
@@ -28,6 +30,7 @@ public class Main{
         input = kbReader.nextLine();
         name = input;
         System.out.println("Welcome to the IQS, " + name + "!");
+        EnteredQuestions eQu = new EnteredQuestions();
         while(x){
             
             System.out.println("Your score is " + score);
@@ -50,6 +53,9 @@ public class Main{
                     e.printStackTrace();
                     System.exit(1);
                 }
+                System.out.println("What would you like to name the file?");
+                input = kbReader.nextLine();
+                FileName = input;
                 System.out.println("Stats have been exported");
             }
 
@@ -76,6 +82,7 @@ public class Main{
                     p = 1;
                 }
                 Question create = new Question(q,a,s,p);
+                eQu.add(q,a,s,p);
                 System.out.println("Would you like to hear your question?");
                 input = kbReader.nextLine();
                 if(input.equalsIgnoreCase("yes")){
@@ -83,6 +90,22 @@ public class Main{
                     input = kbReader.nextLine();
                     checkAnswer(input, create);
                 }
+                
+            }
+            if(input.equalsIgnoreCase("Save Questions")){
+                
+                try{                
+                    exportQuestionsAsHTML();
+                }
+                catch(IOException e){
+                    e.printStackTrace();
+                    System.exit(1);
+                }
+                System.out.println("What would you like to name the file?");
+                input = kbReader.nextLine();
+                FileNameR = input;
+                System.out.println("Questions have been exported");
+                
                 
             }
 
@@ -145,7 +168,7 @@ public class Main{
             if(input.equalsIgnoreCase("yes")){
                 System.out.println("Here is the link to the Wikipedia article with more information:");
                 System.out.println(quest.getSource());
-                System.out.println("Press enter to move on to the next question.");
+                //System.out.println("Press enter to move on to the next question.");
 
             }
 
@@ -160,7 +183,7 @@ public class Main{
      * This exports the file to an HTML file
      */
     public static void exportAsHTML()throws IOException{
-        File f = new File("result.html");
+        File f = new File(FileName + ".html");
         FileWriter fw = new FileWriter(f);
         PrintWriter pw = new PrintWriter(fw);
         pw.println("<!DOCTYPE.html>");
@@ -188,6 +211,29 @@ public class Main{
              
         }
         
+        pw.println("</body>");
+        pw.println("</html>");
+        pw.close();
+        fw.close();
+    }
+    public static void exportQuestionsAsHTML()throws IOException{
+        File f = new File("Questions.html");
+        FileWriter fw = new FileWriter(f);
+        PrintWriter pw = new PrintWriter(fw);
+        pw.println("<!DOCTYPE.html>");
+        pw.println("<html>");
+        pw.println("<head>");
+        pw.println("<title> Your Questions: </title>");
+        pw.println("</head>");
+        pw.println("<body>");
+        pw.println("<h1>Your Questions:</h1>");
+        pw.println("<hr/>");        
+        for(int i = 0;i <EnteredQuestions.size();i++){            
+            pw.println("Question: " + EnteredQuestions.getInd(i).getQuestion());
+            pw.println("Correct Answer: " + EnteredQuestions.getInd(i).getAnswer());            
+            pw.println("Source: " + EnteredQuestions.getInd(i).getSource());
+            pw.println(" ");
+        }        
         pw.println("</body>");
         pw.println("</html>");
         pw.close();
