@@ -19,4 +19,5 @@ comment5.target=void\ exportAsHTML()
 comment5.text=\r\n\ This\ exports\ the\ file\ to\ an\ HTML\ file\r\n
 comment6.params=
 comment6.target=void\ exportQuestionsAsHTML()
+comment6.text=\r\n\ This\ exports\ questions\ as\ HTML\r\n
 numComments=7

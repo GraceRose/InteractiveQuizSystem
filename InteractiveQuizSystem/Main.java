@@ -3,7 +3,7 @@ import java.io.*;
 /**
  * This class runs the IQS
  * @author Grace Rosenvall
- * last modded 20 Mar 2015
+ * last modded 17 Apr 2015
  */
 public class Main{
     protected static int score;
@@ -216,6 +216,9 @@ public class Main{
         pw.close();
         fw.close();
     }
+    /**
+     * This exports questions as HTML
+     */
     public static void exportQuestionsAsHTML()throws IOException{
         File f = new File("Questions.html");
         FileWriter fw = new FileWriter(f);
