@@ -15,6 +15,7 @@ public class Main{
     protected static Question test5 = new Question("What state is the FRC team 254 from?","California","team254.com/",2);
     protected static String FileName = "";
     protected static String FileNameR = "";
+    protected static boolean infPoints = true;
     public static ArrayList<String> storedAnswer = new ArrayList<String>();
     /**
      * This method runs the Interactive Quiz System
@@ -24,15 +25,16 @@ public class Main{
         Main main = new Main();
         Scanner kbReader = new Scanner(System.in);
         boolean x = true;
+        
         String input = "";
         score = 0;
-        System.out.println("Hello and welcome to the Interactive Quiz System. I am Cora, your guide through this process. Please type your name.");
+        System.out.println("Hello and welcome to the Interactive Quiz System. Please type your name.");
         input = kbReader.nextLine();
         name = input;
         System.out.println("Welcome to the IQS, " + name + "!");
         EnteredQuestions eQu = new EnteredQuestions();
         while(x){
-            
+            System.out.println(" ");
             System.out.println("Your score is " + score);
             System.out.println("What would you like to do?");
             input = kbReader.nextLine();
@@ -40,10 +42,13 @@ public class Main{
                 System.out.println("You want to leave....WHY???????...Fine.");
                 x = false;
             }
-
+            if(input.equalsIgnoreCase("help")){
+                System.out.println("These are your commands: ");
+                System.out.println("This feature is still coming.");
+            }
             if(input.equalsIgnoreCase("fact")){
                 System.out.println("This statement is false");
-                addScore(5);
+                addScoreSpecial(5);
             }
             if(input.equalsIgnoreCase("export")){
                 try{                
@@ -54,11 +59,13 @@ public class Main{
                     System.exit(1);
                 }
                 System.out.println("What would you like to name the file?");
-                input = kbReader.nextLine();
-                FileName = input;
+                FileName = kbReader.nextLine();
+                //FileName = input;
                 System.out.println("Stats have been exported");
             }
-
+            if(input.equalsIgnoreCase("bologna")){
+                System.out.println("It's as easily pronounceable as COLONEL!");                
+            }
             if(input.equalsIgnoreCase("test")){
                 test();
             }
@@ -144,6 +151,13 @@ public class Main{
     public static void addScore(int p){
         score += p;
     }
+    
+    public static void addScoreSpecial(int p){
+        if(infPoints != false){
+            score += p; 
+            infPoints = false;
+        }
+    }
 
     /**
      * This asks the question
@@ -166,7 +180,7 @@ public class Main{
             System.out.println("That was correct! Would you like more information on this topic?");
             String input = kbReader.nextLine();
             if(input.equalsIgnoreCase("yes")){
-                System.out.println("Here is the link to the Wikipedia article with more information:");
+                System.out.println("Here is the link to a totally not suspicious webpage with more information:");
                 System.out.println(quest.getSource());
                 //System.out.println("Press enter to move on to the next question.");
 
@@ -174,7 +188,8 @@ public class Main{
 
         }
         else{
-            System.out.println("I'm sorry, that was not correct. Here is the link to the Wikipedia article with more information:");
+            System.out.println("I'm sorry, that was not correct. The correct answer is: " + quest.getAnswer());
+            System.out.println("Here is the link to a totally not suspicious webpage with more information:");
             System.out.println(quest.getSource());
         }
     }
