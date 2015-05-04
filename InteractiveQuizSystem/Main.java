@@ -3,7 +3,7 @@ import java.io.*;
 /**
  * This class runs the IQS
  * @author Grace Rosenvall
- * last modded 17 Apr 2015
+ * last modded 2 May 2015
  */
 public class Main{
     protected static int score;
@@ -16,16 +16,18 @@ public class Main{
     protected static String FileName = "";
     protected static String FileNameR = "";
     protected static boolean infPoints = true;
+    protected static int createValue = 0;
+    protected static DefaultQuestions test = new DefaultQuestions();
     public static ArrayList<String> storedAnswer = new ArrayList<String>();
     /**
      * This method runs the Interactive Quiz System
      * @param args not used
      */
     public static void main(String[] args){
-        Main main = new Main();
+        Main main = new Main();        
+        test.fillArray();
         Scanner kbReader = new Scanner(System.in);
-        boolean x = true;
-        
+        boolean x = true;        
         String input = "";
         score = 0;
         System.out.println("Hello and welcome to the Interactive Quiz System. Please type your name.");
@@ -51,6 +53,9 @@ public class Main{
                 addScoreSpecial(5);
             }
             if(input.equalsIgnoreCase("export")){
+                System.out.println("What would you like to name the file?");
+                FileName = kbReader.nextLine();
+                //FileName = input;
                 try{                
                     exportAsHTML();
                 }
@@ -58,9 +63,6 @@ public class Main{
                     e.printStackTrace();
                     System.exit(1);
                 }
-                System.out.println("What would you like to name the file?");
-                FileName = kbReader.nextLine();
-                //FileName = input;
                 System.out.println("Stats have been exported");
             }
             if(input.equalsIgnoreCase("bologna")){
@@ -82,13 +84,16 @@ public class Main{
                 String s = input;
                 System.out.println("Point value?");
                 input = kbReader.nextLine();
+                if(input.length() < 10){
+                    createValue = Integer.parseInt(input);
+                }
                 if(input.equalsIgnoreCase("default")){
                     p = 2;
                 }
                 else{
                     p = 1;
                 }
-                Question create = new Question(q,a,s,p);
+                Question create = new Question(q,a,s,createValue);
                 eQu.add(q,a,s,p);
                 System.out.println("Would you like to hear your question?");
                 input = kbReader.nextLine();
@@ -97,10 +102,13 @@ public class Main{
                     input = kbReader.nextLine();
                     checkAnswer(input, create);
                 }
-                
+
             }
             if(input.equalsIgnoreCase("Save Questions")){
-                
+
+                System.out.println("What would you like to name the file?");
+                input = kbReader.nextLine();
+                FileNameR = input;
                 try{                
                     exportQuestionsAsHTML();
                 }
@@ -108,14 +116,9 @@ public class Main{
                     e.printStackTrace();
                     System.exit(1);
                 }
-                System.out.println("What would you like to name the file?");
-                input = kbReader.nextLine();
-                FileNameR = input;
                 System.out.println("Questions have been exported");
-                
-                
-            }
 
+            }
         }
     }
 
@@ -124,12 +127,13 @@ public class Main{
      */
     public static void test(){
         Scanner kbReader = new Scanner(System.in);
-        //    for(int i = 0; i< 5;i++){
-        askQuestion(test1);
-        String input = kbReader.nextLine();
-        checkAnswer(input,test1);
-        // }
-        askQuestion(test2);
+        for(int i = 1; i< 6;i++){
+            askQuestion(test.getQuestion(i));
+            String input = kbReader.nextLine();
+            test.addAnswer(input, i);
+            checkAnswer(input,test.getQuestion(i));
+        }
+        /* askQuestion(test2);
         input = kbReader.nextLine();
         checkAnswer(input,test2);
         askQuestion(test3);
@@ -141,6 +145,7 @@ public class Main{
         askQuestion(test5);
         input = kbReader.nextLine();
         checkAnswer(input,test5);
+         */
 
     }
 
@@ -151,7 +156,7 @@ public class Main{
     public static void addScore(int p){
         score += p;
     }
-    
+
     public static void addScoreSpecial(int p){
         if(infPoints != false){
             score += p; 
@@ -204,47 +209,45 @@ public class Main{
         pw.println("<!DOCTYPE.html>");
         pw.println("<html>");
         pw.println("<head>");
-        pw.println("<title> Your Results </title>");
+        pw.println("<title> " + name + "'s Results </title>");
         pw.println("</head>");
         pw.println("<body>");
-        pw.println("<h1>Your Results:</h1>");
+        pw.println("<h1>" + name + "'s Results</h1>");
         pw.println("<hr/>");
-        
         pw.println("<li>" +score + " points" + "</li>");
-        for(int i = 0;i < DefaultQuestions.getArray().length;i++){
-            pw.println("<li>" + "Question: You have not paid for this feature yet."+ "</li>");
-            pw.println("<li>" + "Correct Answer: You have not paid for this feature yet."+ "</li>");
-            pw.println("<li>" + "Your Answer: You have not paid for this feature yet."+ "</li>");
-            pw.println("<li>" + "Source: You have not paid for this feature yet."+ "</li>");
-            pw.println("<li></li>");
-            /*
-             * pw.println("Question: " + DefaultQuestions.getQuestion(i+1).getQuestion());
-            pw.println("Correct Answer: " + DefaultQuestions.getQuestion(i+1).getAnswer());
-            pw.println("Your Answer: " + storedAnswer.get(i));
-            pw.println("Source: " + DefaultQuestions.getQuestion(i+1).getSource());
-             * */
-             
-        }
-        
+        for(int i = 0;i <5 ;i++){            
+            pw.println("\nQuestion: " + test.getQuestion(i+1).getQuestion());
+            pw.println("\nYour Answer: " + test.getAnswer(i));
+            pw.println("\nCorrect Answer: " + test.getQuestion(i+1).getAnswer());            
+            pw.println("\nSource: " + test.getQuestion(i+1).getSource());
+            pw.println(" ");
+        }         
+        /*
+         * pw.println("Question: " + DefaultQuestions.getQuestion(i+1).getQuestion());
+        pw.println("Correct Answer: " + DefaultQuestions.getQuestion(i+1).getAnswer());
+        pw.println("Your Answer: " + storedAnswer.get(i));
+        pw.println("Source: " + DefaultQuestions.getQuestion(i+1).getSource());
+         * */
         pw.println("</body>");
         pw.println("</html>");
         pw.close();
         fw.close();
     }
+
     /**
      * This exports questions as HTML
      */
     public static void exportQuestionsAsHTML()throws IOException{
-        File f = new File("Questions.html");
+        File f = new File(FileNameR + ".html");
         FileWriter fw = new FileWriter(f);
         PrintWriter pw = new PrintWriter(fw);
         pw.println("<!DOCTYPE.html>");
         pw.println("<html>");
         pw.println("<head>");
-        pw.println("<title> Your Questions: </title>");
+        pw.println("<title>" + name + "'s Questions: </title>");
         pw.println("</head>");
         pw.println("<body>");
-        pw.println("<h1>Your Questions:</h1>");
+        pw.println("<h1>" + name + "'s Questions:</h1>");
         pw.println("<hr/>");        
         for(int i = 0;i <EnteredQuestions.size();i++){            
             pw.println("Question: " + EnteredQuestions.getInd(i).getQuestion());
